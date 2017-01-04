@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<TITLE>Adinasart- Paintings by Adina Cicort</TITLE>
+<link href="http://www.adinasart.com/css/text_pop.css" rel="stylesheet" type="text/css">
+<script LANGUAGE="JavaScript">
+<!--
+function popup(file,w,h)
+{
+displayPic=window.open(file+".php","displayPic","toolbar=no,directories=no,menubar=no,scrollbars=no,width="+w+",height="+h+",top=10,left=10");
+}
+//-->
+</script>
+<script LANGUAGE="JavaScript">
+<!--
+function popupport(pic,w,h)
+{
+displayPic2=window.open("popups.php?pic="+pic,"displayPic2","toolbar=no,directories=no,menubar=no,scrollbars=no,width="+w+",height="+h+",top=10,left=10");
+}
+//-->
+</script><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" ONLOAD="window.focus();">
+<table width="98%" height="98%" border="0" align="center" cellpadding="4" cellspacing="0">
+  <tr> 
+    <td colspan="2" align="center" valign="middle">
+      <table border="0" align="center" cellpadding="10" cellspacing="0" bgcolor="#000000" class="bord_port">
+        <tr>
+          <td><a href="javascript:self.close()"><img src=".jpg" alt="&copy; 2006 adinasart.com" border="0"></a></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr valign="bottom">
+    <td align="left" nowrap><a href="javascript:self.close()" class="link">close
+        window</a></td>
+    <td height="20" align="right" nowrap class="textcopyright"><div align="right">&copy; 2006
+        <strong>adinasart.com</strong></div></td>
+  </tr>
+</table>
+</body>
+
+</html>
+

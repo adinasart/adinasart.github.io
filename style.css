@@ -1,0 +1,138 @@
+﻿ul#grid li {
+        list-style: none inside;
+        float: left;
+        width: 130px;
+        height: 130px;
+        margin: -16px 0px 25px -40px;
+        text-align: left;
+}
+.style1 {
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.style2 {
+	text-align: left;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.style11 {
+	line-height: 24px;
+	color: #999999;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: right;
+	font-size: 9pt;
+}
+.style12 {
+	line-height: 24px;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	font-size: 9pt;
+}
+.style13 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+}
+.style14 {
+	font-size: medium;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #808080;
+}
+.style15 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #C0C0C0;
+	font-size: small;
+}
+.style16 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #C0C0C0;
+	font-size: small; 
+	text-align: right;
+}
+.style17 {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #C0C0C0;
+	font-size: small;
+}
+.style19 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #999999;
+}
+.style20 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #999999;
+}
+.style21 {
+	text-align: left;
+	color: #FFFFFF;
+}
+.style22 {
+	text-align: left;
+	color: #FFFFFF;
+}
+input, textarea { 
+   background-color: #CCCCCC; 
+   font-family: Arial, Helvetica, sans-serif; 
+   font-size: 10pt; 
+   color: #000000;
+   border-width: 1px;
+   border-style: solid;
+   border-color:#666666;
+}
+h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	font-size: 11pt;
+	color: #FFFFFF;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-size: 10pt;
+	color: #FFFFFF;
+}
+h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 10pt;
+	color: #FFFFFF;
+}
+h5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 9pt;
+	color: #E6E6E6;
+	text-align: left;
+}
+ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 9pt;
+	color: #E6E6E6;
+	text-align: left;
+	list-style-position: outside;
+	list-style-type: disc;
+	line-height: 25px;
+}
+a {
+	color: #FFFFFF;
+	text-align: left;
+}
+a:visited {
+	color: #FFFFFF;
+	text-align: left;
+}
+a:active {
+	color: #FFFFFF;
+	text-align: left;
+}
+a:hover {
+	color: #FFFFFF;
+	text-align: left;
+}

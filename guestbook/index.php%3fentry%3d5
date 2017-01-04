@@ -1,0 +1,535 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<HTML LANG=en-US>
+<title>Guestbook</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+<meta name="language" content="english, eng">
+<meta name="robots" content="index,follow,all">
+<meta name="revisit-after" content="10 days">
+<meta name="author" content="Robilix WEB - www.robilix.com">
+<meta name="publisher" content="Robilix WEB - www.robilix.com">
+<meta name="copyright" content="Adina Cicort">
+<meta name="description" content="Paintings by Adina Cicort">
+<meta name="identifier-URL" content="http://www.adinasart.com">
+<meta name="keywords" content="Paintings">
+<meta name="page-topic" content="Art">
+<meta name="page-type" content="Private Homepage">
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="coverage" content="worldwide">
+<link href="http://www.adinasart.com/css/text.css" rel="stylesheet" type="text/css">
+<script LANGUAGE="JavaScript">
+<!--
+function popupport(pic,w,h)
+{
+displayPic2=window.open("popups.php?pic="+pic,"displayPic2","toolbar=no,directories=no,menubar=no,scrollbars=no,width="+w+",height="+h+",top=10,left=10");
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.font1 {  font-family: Georgia, Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #000000 }
+.font2 {  font-family: Georgia, Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000 }
+.font3 { font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt; color: #000000; font-weight: bold}
+.select {  font-family: Georgia, Verdana, Arial, Helvetica, sans-serif; font-size: 9pt}
+.input {  font-family: Georgia, Verdana, Arial, Helvetica, sans-serif; font-size: 9pt}
+-->
+</style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FFFFFF" link="#B21818" vlink="#B21818">
+<table width="700" border="0" cellspacing="0" cellpadding="0">
+  <tr align="left" valign="top">
+    <td colspan="2" align="right" valign="top" background="http://www.adinasart.com/photos/system/tbg2.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="200"><img src="http://www.adinasart.com/photos/system/img.jpg" width="450" height="200"></td>
+        </tr>
+        <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr align="left" valign="top">
+                <td width="50" align="right">&nbsp;</td>
+                <td width="400" align="right" bgcolor="#C6C6C6"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+                    <tr>
+                      <td class="title">Guestbook Adina</td>
+                    </tr>
+                    <tr>
+                      <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td class="textjust"><script type="text/javascript">
+<!--
+function gb_picture(Image,imgWidth,imgHeight) {
+    var border = 24;
+    var img = Image;
+    var features;
+    var w;
+    var h;
+    winWidth = (imgWidth<100) ? 100 : imgWidth+border;
+    winHeight = (imgHeight<100) ? 100 : imgHeight+border;
+    if (imgWidth+border > screen.width) {
+        winWidth = screen.width-10;
+        w = (screen.width - winWidth)/2;
+        features = "scrollbars=yes";      
+    } else {
+        w = (screen.width - (imgWidth+border))/2;
+    }
+    if (imgHeight+border > screen.height) {
+        winHeight = screen.height-60;
+        h = 0;
+        features = "scrollbars=yes";      
+    } else {
+        h = (screen.height - (imgHeight+border))/2 - 20;
+    }
+    winName = (img.indexOf("t_") == -1) ? img.substr(4,(img.length-8)) : img.substr(6,(img.length-10));
+    features = features+',toolbar=no,width='+winWidth+',height='+winHeight+',top='+h+',left='+w;
+    theURL = '/guestbook/picture.php?img='+Image;
+    popup = window.open(theURL,winName,features);
+    popup.focus();  
+}
+function getEmail(email) {
+    var stringPos = false; 
+    var stringEmail = ""; 
+    if (email.length>0) { 
+    for (var i=0; i<email.length; i++) {    
+    stringPos = (i % 2) ? false : true; 
+    if (stringPos == true) { 
+    stringEmail = stringEmail + "%" + email.charAt(i); 
+    } else { 
+    stringEmail = stringEmail + email.charAt(i); 
+    } 
+  } 
+  stringEmail = unescape(stringEmail); 
+  window.location.href = stringEmail; 
+  } 
+}
+
+function getbyid(id) {
+	itm = null;
+	if (document.getElementById) {
+		itm = document.getElementById(id);
+	}
+	else if (document.all) {
+		itm = document.all[id];
+	}
+	else if (document.layers) 	{
+		itm = document.layers[id];
+	}
+	return itm;
+}
+function toggleview(id) {
+	if ( ! id ) return;
+	if ( itm = getbyid(id) ) {
+		if (itm.style.display == "none")	{
+			show_div(itm);
+		} else {
+			hide_div(itm);
+		}
+	}
+}
+function hide_div(itm) {
+	if ( ! itm ) return;
+	itm.style.display = "none";
+}
+function show_div(itm) {
+	if ( ! itm ) return;
+	itm.style.display = "";
+}
+// -->
+</script> <table border="0" cellspacing="0" cellpadding="2" align="center" width="95%">
+  <tr>
+    <td width="56%">&nbsp;</td>
+    <td width="44%" align="right" valign="bottom" class="font2"><a href="addentry.php" rel="nofollow"><b>Sign the Guestbook</b></a></td>
+  </tr>
+   <tr>
+     <td width="56%" class="font2"> 3-17-2008 03:51<br>Thank you for visiting my site. Here you can leave your comments.</td>
+    <td width="44%" valign="bottom" align="right">
+<!--Start JumpMenu -->
+<form method="post" action="index.php" style="margin:5px 0 0 0;">
+<select name="entry" class="select">
+<option value="0" selected="selected">Guestbook</option>
+<option value="0">65-69</option>
+<option value="4">61-65</option>
+<option value="9">56-60</option>
+<option value="14">51-55</option>
+<option value="19">46-50</option>
+<option value="24">41-45</option>
+<option value="29">36-40</option>
+<option value="34">31-35</option>
+<option value="39">26-30</option>
+<option value="44">21-25</option>
+<option value="49">16-20</option>
+<option value="54">11-15</option>
+<option value="59">6-10</option>
+<option value="64">1-5</option>
+</select>
+<input type="submit" value="Go" class="input">
+</form>
+<!--End JumpMenu -->
+      </td>    
+    </tr>
+  </table>
+<!--Start Top Navigation -->
+  <table width="95%" border="0" cellspacing="0" cellpadding="2" align="center">
+    <tr valign="bottom">
+      <td class="font2"><img src="/guestbook/img/point3.gif" width="9" height="9" alt="">Total Records:
+       <b><font color="#DD0000">69</font></b> &nbsp; Records Viewed Per Page: <b><font color="#DD0000">5</font></b></td>
+      <td align="right" class="font2">  <a href="index.php?entry=0">1</a> [2] <a href="index.php?entry=10">3</a> <a href="index.php?entry=15">4</a> ... <a href="index.php?entry=65">14</a>
+      </td>
+   </tr>
+  </table>
+<!--End Top Navigation -->
+  <table border="0" cellspacing="1" cellpadding="5" align="center" width="95%" bgcolor="#000000">
+    <tr bgcolor="#B21818">
+      <td width="32%"><font size="2" face="Georgia, Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF"><b>Name</b></font></td>
+      <td width="68%"><font size="2" face="Georgia, Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF"><b>Comments</b></font></td>
+    </tr>
+<!--Start Guestbook Entries -->
+<tr bgcolor="#E8E8E8">
+ <td width="32%" valign="top">
+   <table border="0" cellspacing="0" cellpadding="2" align="left">
+     <tr>
+       <td class="font2" valign="top" width="8%"><b>64)</b></td>
+       <td width="92%" class="font1"><b>Norey Agudelo</b>&nbsp;&nbsp;<img src="/guestbook/img/male.gif" width="12" height="12" alt="Male" title="Male"></td>
+     </tr>
+     <tr>
+       <td colspan="2" class="font1"></td>
+     </tr>     <tr>
+       <td colspan="2" class="font2">Location:<br>West Haven</td>
+     </tr>
+     <tr>
+       <td colspan="2"> <img src="/guestbook/img/ip.gif" width="14" height="14" alt="IP logged" title="IP logged"> <img src="/guestbook/img/browsers/msie.png" width="14" height="14" alt="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3" title="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3">      </td>
+     </tr>     
+    </table>
+  </td>
+  <td width="68%" class="font1" valign="top"> 
+    <div align="left" class="font3"><img src="/guestbook/img/post.gif" width="9" height="9" alt=""> 10-5-2006 10:35 
+     <a href="comment.php?gb_id=66" rel="nofollow"><img src="/guestbook/img/edit.gif" width="18" height="13" border="0" alt="Write a comment" title="Write a comment"></a>
+     
+    </div>
+    <hr size="1"><div align="left">
+     Cordial saludo.<br />
+ <br />
+Apreciada Adina;<br />
+ <br />
+He visto tu pa'gina Web,tus obras son maravillosas,el colorido es fantastico,eres de Rumania, sabes?<br />
+hace mucho tiempo me propusieron un intercambio de artistas entre tu Pais de origen y mi pais<br />
+que es Colombia, desafortunadamente no pude realizar ese viaje tan importante para mi,pero aqui <br />
+ya tengo una artista de alla' , me siento muy contenta y te felicito porque tu expresion es clara<br />
+sigue pintando como veo que son tus propo'sitos.<br />
+ <br />
+!FELICIDADESSSSSSSSSS. <br />
+ <br />
+Cuando desees escribirme puedes hacerlo a mi E-mail: noriamprimimodernismo@msn.com<br />
+ <br />
+ <br />
+Sinceros saludos,<br />
+M.Norey Agudelo<br />
+Artista visual.
+   </div>
+   
+ </td>
+</tr>
+<tr bgcolor="#F7F7F7">
+ <td width="32%" valign="top">
+   <table border="0" cellspacing="0" cellpadding="2" align="left">
+     <tr>
+       <td class="font2" valign="top" width="8%"><b>63)</b></td>
+       <td width="92%" class="font1"><b>Solange Garcia Alford</b>&nbsp;&nbsp;<img src="/guestbook/img/female.gif" width="12" height="12" alt="Female" title="Female"></td>
+     </tr>
+     <tr>
+       <td colspan="2" class="font1"></td>
+     </tr>     <tr>
+       <td colspan="2" class="font2">Location:<br>FlowerMound, TX</td>
+     </tr>
+     <tr>
+       <td colspan="2"> <img src="/guestbook/img/ip.gif" width="14" height="14" alt="IP logged" title="IP logged"> <img src="/guestbook/img/browsers/msie.png" width="14" height="14" alt="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4" title="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4">      </td>
+     </tr>     
+    </table>
+  </td>
+  <td width="68%" class="font1" valign="top"> 
+    <div align="left" class="font3"><img src="/guestbook/img/post.gif" width="9" height="9" alt=""> 9-23-2006 09:21 
+     <a href="comment.php?gb_id=65" rel="nofollow"><img src="/guestbook/img/edit.gif" width="18" height="13" border="0" alt="Write a comment" title="Write a comment"></a>
+     
+    </div>
+    <hr size="1"><div align="left">
+     Adina, it was a pleasure meeting Marcel. He mentioned your artistic talent. You have a gift. Your paintings are beautiful! The Butterfly is eye-catching. It reminded me of our trip to the mountains where the Monarchs retreat in the winter, south in Mexico. The best to you.<br />
+Solange<br />
+Tu est une grande artiste.
+   </div>
+   
+ </td>
+</tr>
+<tr bgcolor="#E8E8E8">
+ <td width="32%" valign="top">
+   <table border="0" cellspacing="0" cellpadding="2" align="left">
+     <tr>
+       <td class="font2" valign="top" width="8%"><b>62)</b></td>
+       <td width="92%" class="font1"><b>Kathleen Paul</b>&nbsp;&nbsp;<img src="/guestbook/img/female.gif" width="12" height="12" alt="Female" title="Female"></td>
+     </tr>
+     <tr>
+       <td colspan="2" class="font1"></td>
+     </tr>     <tr>
+       <td colspan="2" class="font2">Location:<br>St. Louis</td>
+     </tr>
+     <tr>
+       <td colspan="2"> <img src="/guestbook/img/ip.gif" width="14" height="14" alt="IP logged" title="IP logged"> <img src="/guestbook/img/browsers/msie.png" width="14" height="14" alt="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)" title="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)">      </td>
+     </tr>     
+    </table>
+  </td>
+  <td width="68%" class="font1" valign="top"> 
+    <div align="left" class="font3"><img src="/guestbook/img/post.gif" width="9" height="9" alt=""> 7-26-2006 16:48 
+     <a href="comment.php?gb_id=64" rel="nofollow"><img src="/guestbook/img/edit.gif" width="18" height="13" border="0" alt="Write a comment" title="Write a comment"></a>
+     
+    </div>
+    <hr size="1"><div align="left">
+     Adina, your paintings are just WONDERFUL! You are very talented and I am sure that you are going to be wildly successful! I work w/ Marcel at Citi - but I'm just outside of St. Louis, Missouri. Again, your work is truly beautiful.
+   </div>
+   
+ </td>
+</tr>
+<tr bgcolor="#F7F7F7">
+ <td width="32%" valign="top">
+   <table border="0" cellspacing="0" cellpadding="2" align="left">
+     <tr>
+       <td class="font2" valign="top" width="8%"><b>61)</b></td>
+       <td width="92%" class="font1"><b>Aki</b>&nbsp;&nbsp;<img src="/guestbook/img/male.gif" width="12" height="12" alt="Male" title="Male"></td>
+     </tr>
+     <tr>
+       <td colspan="2" class="font1"></td>
+     </tr>     <tr>
+       <td colspan="2" class="font2">Location:<br>RO</td>
+     </tr>
+     <tr>
+       <td colspan="2"> <img src="/guestbook/img/ip.gif" width="14" height="14" alt="IP logged" title="IP logged"> <img src="/guestbook/img/browsers/msie.png" width="14" height="14" alt="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" title="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)">      </td>
+     </tr>     
+    </table>
+  </td>
+  <td width="68%" class="font1" valign="top"> 
+    <div align="left" class="font3"><img src="/guestbook/img/post.gif" width="9" height="9" alt=""> 7-2-2006 12:38 
+     <a href="comment.php?gb_id=63" rel="nofollow"><img src="/guestbook/img/edit.gif" width="18" height="13" border="0" alt="Write a comment" title="Write a comment"></a>
+     
+    </div>
+    <hr size="1"><div align="left">
+     ochii din fotografie sunt oglinda picturilor minunate! respect!
+   </div>
+   
+ </td>
+</tr>
+<tr bgcolor="#E8E8E8">
+ <td width="32%" valign="top">
+   <table border="0" cellspacing="0" cellpadding="2" align="left">
+     <tr>
+       <td class="font2" valign="top" width="8%"><b>60)</b></td>
+       <td width="92%" class="font1"><b>Irina</b>&nbsp;&nbsp;<img src="/guestbook/img/female.gif" width="12" height="12" alt="Female" title="Female"></td>
+     </tr>
+     <tr>
+       <td colspan="2" class="font1"></td>
+     </tr>     <tr>
+       <td colspan="2" class="font2">Location:<br>San Diego, CA</td>
+     </tr>
+     <tr>
+       <td colspan="2"> <img src="/guestbook/img/ip.gif" width="14" height="14" alt="IP logged" title="IP logged"> <img src="/guestbook/img/browsers/msie.png" width="14" height="14" alt="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" title="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)">      </td>
+     </tr>     
+    </table>
+  </td>
+  <td width="68%" class="font1" valign="top"> 
+    <div align="left" class="font3"><img src="/guestbook/img/post.gif" width="9" height="9" alt=""> 6-26-2006 11:42 
+     <a href="comment.php?gb_id=62" rel="nofollow"><img src="/guestbook/img/edit.gif" width="18" height="13" border="0" alt="Write a comment" title="Write a comment"></a>
+     
+    </div>
+    <hr size="1"><div align="left">
+     Adina, your paintings are healing to the eye, I haven't been in my old country in quite some time, but looking at your work and reading about your inspirations, brings out pleasant memories. I wish you good luck achieving your future goals and projects, personally, spiritually and of course professionally. You are not only talented, but also beautiful and I am proud to show off with you to my other artist friends in California.<br />
+Love,<br />
+irina
+   </div>
+   
+ </td>
+</tr>
+
+<!--End Guestbook Entries -->
+ </table>
+<!--Start Bottom Navigation -->
+ <table width="95%" border="0" cellspacing="0" cellpadding="2" align="center">
+  <tr valign="top">
+   <td class="font2"><img src="/guestbook/img/point2.gif" width="9" height="9" alt="">HTML code is disabled </td>
+   <td align="right" class="font2">  <a href="index.php?entry=0">1</a> [2] <a href="index.php?entry=10">3</a> <a href="index.php?entry=15">4</a> ... <a href="index.php?entry=65">14</a></td>
+  </tr>
+ </table>
+<!--End Bottom Navigation -->
+<div style="text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#B6B6B6;font-weight:bold;">Powered by Lazarus Guestbook from <a href="http://lazarus.carbonize.co.uk/" target="_blank" style="color:#CCC">carbonize.co.uk</a></div>
+</td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    <td width="200" rowspan="2" align="center"><table width="250" border="0" cellspacing="0" cellpadding="0">
+        <tr align="left" valign="top">
+          <td width="200" align="left" valign="middle"><table width="180" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="15" rowspan="9">&nbsp;</td>
+                <td width="165" height="10"></td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">Home</td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/aboutme/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">About
+                  Adina</td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/paintings/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">Artworks</td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/guestbook/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">Guestbook</td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://adinasart.blogspot.com'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">NEWS
+                  BLOG </td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/shop/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">Shop</td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/contact/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">Contact
+                  me</td>
+              </tr>
+              <tr>
+                <td class="menuon" OnClick="javascript: document.location.href='http://www.adinasart.com/links/'" onMouseOver="className='menuoff';" onMouseOut="className='menuon';">Links</td>
+              </tr>
+            </table></td>
+          <td width="50" align="center">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="150" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center"><img src="http://www.adinasart.com/photos/system/adina.jpg" class="border"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="motto"><p>My art is the expression of feelings, memories and sensations. Join me in this journey, take a moment only for you and dream with me:
+              colors and forms!<br>
+              <em>Adina Cicort</em> <br>
+            </p></td>
+        </tr>
+        <tr>
+          <td height="25" class="motto">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="motto"><table width="100%" border="0" cellpadding="1" cellspacing="0">
+              <tr>
+                <td height="30" nowrap background="http://www.adinasart.com/photos/system/1a.gif" bgcolor="#920F10" class="motto">&nbsp;&nbsp;&nbsp;<strong>Recommend
+                  to a friend</strong></td>
+              </tr>
+              <tr>
+                <td align="center" class="motto"><div align="center">enter your
+                    friends email</div></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" class="text"><div align="center">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <script language="Javascript">
+				function Validateform(forma)
+				{
+				if (recommandation.email.value == '')
+				{alert("enter email ...");recommandation.email.focus();return false;}
+				else
+				if(recommandation.email.value.search("@") == -1 || recommandation.email.value.search("[.*]") == -1)
+				  {alert("enter a valid e-mail address ...");recommandation.email.focus();return false;}
+				else return true;                        
+				}
+				</script>
+                        <form name="recommandation" action="http://www.adinasart.com/templates/recomand.php" method="get" onSubmit="return Validateform(this);">
+                          <td height="25" align="center"><input name="email" type="text" size="15">
+                            <input name="submit" type="submit" value="send" class=buttons>
+                          </td>
+                        </form>
+                      </tr>
+                    </table>
+                  </div></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="25" class="motto">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="motto"><table width="100%" border="0" cellpadding="1" cellspacing="0">
+              <tr>
+                <td height="30" nowrap background="http://www.adinasart.com/photos/system/1a.gif" bgcolor="#920F10" class="motto"><strong>Join
+                  Adina's Mail List&nbsp;&nbsp;&nbsp;</strong></td>
+              </tr>
+              <tr>
+                <td align="center" class="motto"><div align="center">enter your
+                    email</div></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" class="text"><div align="center">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <script language="Javascript">
+				function Validateform(forma)
+				{
+				if (subscribeadina.email.value == '')
+				{alert("enter email ...");subscribeadina.email.focus();return false;}
+				else
+				if(subscribeadina.email.value.search("@") == -1 || subscribeadina.email.value.search("[.*]") == -1)
+				  {alert("enter a valid e-mail address ...");subscribeadina.email.focus();return false;}
+				else return true;                        
+				}
+				</script>
+                        <form name="subscribeadina" action="http://www.adinasart.com/templates/subscribe.php" method="get" onSubmit="return Validateform(this);">
+                          <td height="25" align="center"><input name="email" type="text" size="15">
+                            <input name="submit" type="submit" value="join" class=buttons>
+                          </td>
+                        </form>
+                      </tr>
+                    </table>
+                  </div></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    <td width="50" rowspan="2" align="center">&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top">
+    <td width="50" height="80" align="right" valign="middle" background="http://www.adinasart.com/photos/system/lbg.jpg"><img src="http://www.adinasart.com/photos/system/lbg.jpg" width="50" height="2"> </td>
+    <td width="400" height="80" align="left" valign="top" background="http://www.adinasart.com/photos/system/dbg.jpg"><table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="left" nowrap class=textcopyright>&nbsp;</td>
+          <td align="left" nowrap class=textcopyright>&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="20" align="left" nowrap class=textcopyright>&nbsp;</td>
+          <td align="left" nowrap class=textcopyright>Copyright 2005-2006 <strong>Adina
+            Cicort </strong>All rights reserved </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write("\<script src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'>\<\/script>" );
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3217303-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3507086-1";
+urchinTracker();
+</script>
+</html>

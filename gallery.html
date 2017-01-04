@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ><head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<!--[if lt IE 7]>
+  <script type="text/javascript" src="javascript/unitpngfix.js"></script>
+<![endif]-->
+<script type="text/javascript" src="javascript/getscreen.js" >
+</script>
+<script type="text/javascript" src="javascript/jquery.js" >
+</script>
+<script type="text/javascript" src="javascript/binaryajax.js" >
+</script>
+<script type="text/javascript" src="javascript/exif.js" >
+</script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Adinasart - Adina Cicort Paintings</title>
+<style type="text/css">
+<!--
+a:link {
+	color: #FFF;
+}
+a:visited {
+	color: #FFF;
+}
+body,td,th {
+	color: #FFF;
+}
+-->
+</style>
+<script type="text/javascript">
+function hgsubmit()
+{
+if (/\S+/.test(document.hgmailer.name.value) == false) alert ("Please tell me your name.");
+else if (/^\S+@[a-z0-9_.-]+\.[a-z]{2,6}$/i.test(document.hgmailer.email.value) == false) alert ("Your valid email address is required.");
+ else if (/\S+/.test(document.hgmailer.comment.value) == false) alert ("Your message content is needed.");
+  else {
+       document.hgmailer.submit();
+       alert ('Thank you!\nYour email has been sent. Upon clicking OK you will be redirected back to Adinasart Home Page');
+       }
+}
+</script>
+</head><body onload="javascript:loadComplete()" onclick="whichElement(event)" onmouseover="whichElement2(event)" style="background-color:rgb(0, 0, 0); " >
+
+<div id="menu" style="position:relative; width:145px; height:32px; z-index:11; overflow-x:hidden; overflow-y:hidden; " >
+	<div id="download_button" class="style13" style="position:absolute; width:126px; height:16px; z-index:4; left:7px; top:52px; padding-left:5px; color:rgb(255, 255, 255); cursor:pointer; padding-top:1px; " >
+		larger image</div>
+	<div id="menu_title" class="style20" style="position:absolute; width:125px; height:18px; z-index:6; left:12px; top:8px; " >
+		</div>
+	<div id="bottom" style="position:absolute; width:145px; height:10px; z-index:3; bottom:0px; background-image:url(images/menu_bottom.png); " >
+	</div>
+	<div id="top" style="position:absolute; width:145px; height:10px; z-index:1; top:0px; left:0px; background-image:url(images/menu_top.png); " >
+	</div>
+	<div id="center" style="position:absolute; width:145px; height:auto; z-index:2; bottom:10px; top:10px; background-image:url(images/menu_back.png); " >
+	</div>
+</div>
+
+<script type="text/javascript" src="javascript/javascript.js" >
+</script>
+
+<!--These are preload and loading divs; the loading div is displayed while the page is being downloaded, and dissapears when it's complete:-->
+<div id="preload" style="position:absolute; width:100px; height:100px; z-index:10; display:none; " >
+	<img alt="" height="300" src="images/overlay.png" width="300" /><img alt="" height="32" src="images/ajax-loader.gif" width="32" /><img alt="" src="images/menu_highlight.gif" /><img alt="" src="images/send_button_sel.png" /><img alt="" src="images/menu_highlight.jpg" />
+</div>
+<div id="loading_overlay" style="position:absolute; width:auto; height:auto; z-index:9; bottom:0px; left:0px; right:0px; top:0px; background-image:url(images/overlay.png); " >
+	<div id="layer7" style="position:relative; width:32px; height:32px; z-index:1; top:250px; margin-left:auto; margin-right:auto; " >
+		<img alt="Loading..." height="32" src="images/ajax-loader.gif" width="32" />
+	</div>
+</div>
+
+<!--This is the title shown at the top left of the page; I used spaces in between each letter to simulate increased kerning:-->
+<div id="title" class="style15" style="position:absolute; width:auto; height:25px; z-index:7; left:13%; top:15px; " >
+		<a href="index.html"style="text-decoration: none"><font color="#C0C0C0"><strong>A d i n a s a r t . c o m   -  Adina Cicort Paintings</strong></a></font>
+</div>
+<!--This photo_wrapper div contains the main photo view, info HUD, toolbar and caption bar:-->
+<div id="photo_wrapper" class="style1" style="position:absolute; width:auto; height:auto; z-index:5; top:50px; left:125px; overflow-x:hidden; overflow-y:hidden; right:350px; bottom:25px; min-width:385px; " >
+	<div id="info_hud" style="position:absolute; width:282px; height:429px; z-index:1; background-image:url(images/info_hud.png); left:45px; top:53px; " >
+		<div id="info_labels" class="style11" style="position:absolute; width:92px; height:318px; z-index:3; left:32px; top:72px; " ><strong>resolution<br/>dimensions<br/>date taken<br/><br/>make<br/>model<br/><br/>shutter<br/>aperture<br/>exp comp<br/>exposure<br/>focal length<br/>metering</strong></div>
+		<br/>
+		<div id="info_text" class="style12" style="position:absolute; width:112px; height:318px; z-index:3; left:142px; top:72px; overflow-x:hidden; overflow-y:hidden; " >--<br/>--<br/>--<br/><br/>--<br/>--<br/><br/>--<br/>--<br/>--<br/>--<br/>--<br/>--</div>
+			<div id="loading_text" class="style14" style="position:absolute; width:220px; height:32px; z-index:5; left:33px; top:150px; " >
+				<img alt="" height="32" src="images/ajax-loader.gif" width="32" />
+			</div>
+		<span class="style13" ><strong>Info</strong></span><div id="closeinfo_button" style="position:absolute; width:15px; height:15px; z-index:4; left:17px; top:16px; cursor:pointer; " >
+	</div>
+</div>
+	<!--This caption_wrapper div contains all of the elements that make up the caption bar in the bottom right of the photo view. The caption_text does not need a value specified in the HTML- it is set automatically at runtime-->
+	<div id="caption_wrapper" style="position:absolute; width:300px; height:35px; z-index:3; bottom:0px; right:0px; " >
+		<div id="caption_text" style="position:absolute; width:300px; height:35px; z-index:3; right:0px; background-image:url(images/caption_back.png); padding-top:10px; padding-right:20px; " class="style15" ></div>
+		<div id="caption_edge" style="position:absolute; width:35px; height:35px; z-index:2; left:0px; background-image:url(images/caption_edge.png); " >
+		</div>
+	</div>
+	<!--This is div contains all of the elements that make up the toolbar in the top right of the photo view:-->
+	<div id="toolbar" style="position:absolute; width:283px; height:34px; z-index:4; top:0px; right:0px; background-image:url(images/toolbar.png); " class="style1" >
+		<div id="thumbnails_button" class="style2" style="position:absolute; width:133px; height:17px; z-index:1; left:11px; top:9px; cursor:pointer; " >
+			         thumbnails: <strong>on</strong>
+		</div>
+		<div id="captions_button" class="style2" style="position:absolute; width:110px; height:17px; z-index:1; left:169px; top:9px; cursor:pointer; " >
+			      captions: <strong>on</strong>
+		</div>
+	</div>
+	<!--These 4 divs are the rounded corners for the main photo view:-->
+	<div id="layer4" style="position:absolute; width:12px; height:12px; z-index:8; background-image:url(images/rcorner%2dbr.png); bottom:-1px; right:-1px; " >
+	</div>
+	<div id="layer3" style="position:absolute; width:12px; height:12px; z-index:7; left:-1px; background-image:url(images/rcorner%2dbl.png); bottom:-1px; " >
+	</div>
+	<div id="layer2" style="position:absolute; width:12px; height:12px; z-index:6; top:-1px; background-image:url(images/rcorner%2dtr.png); right:-1px; " >
+	</div>
+	<div id="layer1" style="position:absolute; width:12px; height:12px; z-index:5; left:-1px; top:-1px; background-image:url(images/rcorner%2dtl.png); " >
+	</div>
+	<!--CONTENT TO BE EDITIED: this is the main photo view image; it must be edited to match the src and alt of the first thumbnail (since it will be displayed when the page is loaded)-->
+		<img id="photo" class="photo" alt="Seven Things About Her, Oil, 16x20, Sold" src="photos/paintings/Picture_1.jpg" /></div>
+
+    <div id="layer6" class="style16" style="position:absolute; width:300px; height:25px; z-index:6; top:15px; right:15%; " >
+		<a href="index.html" style="text-decoration: none"><div style="position:absolute; width:auto; height:25px; z-index:1; right:391px; top:1px; cursor:pointer; " ><font color="#C0C0C0">home</font></a></div>
+        <!--The 'Biography' button at the top right of the page:-->
+		<div id="nav1_button" style="position:absolute; width:auto; height:25px; z-index:1; right:327px; top:1px; cursor:pointer; " >biography</div>
+        <!--The 'Events' button at the top right of the page:-->
+		<div id="nav2_button" style="position:absolute; width:auto; height:25px; z-index:1; right:238px; top:1px; cursor:pointer; " >events</div>
+		<!--The 'Contact' button at the top right of the page:-->
+		<div id="nav4_button" style="position:absolute; width:auto; height:25px; z-index:1; right:188px; top:1px; cursor:pointer; " >contact</div>
+		<!--The 'Gallery' button at the top right of the page:-->
+        <a href="gallery.html" style="text-decoration: none"><div style="position:absolute; width:auto; height:25px; z-index:1; right:282px; top:1px; cursor:pointer; " ><font color="#C0C0C0">gallery</font></a></div>
+        <!--The 'Studio' button at the top right of the page:-->
+        <a href="studio.html" style="text-decoration: none"><div style="position:absolute; width:auto; height:25px; z-index:1; right:110px; top:1px; cursor:pointer; " ><font color="#C0C0C0">artist_studio</font></a></div>
+        <!--The 'Artist Background' button at the top right of the page:-->
+        <a href="background.html" style="text-decoration: none"><div style="position:absolute; width:auto; height:25px; z-index:1; right:0px; top:1px; cursor:pointer; " ><font color="#C0C0C0">artist_background</font></a></div>
+        <!--The 'Artglass' button at the top right of the page
+        <a href="artglass.html" style="text-decoration: none"><div style="position:absolute; width:auto; height:25px; z-index:1; right:0px; top:1px; cursor:pointer; " ><font color="#C0C0C0">artglass</font></a></div>:-->
+      </div>
+<!--This is essentially a div that fills the screen, but is behind all other elements. When the mouse enters it (the same as leaving the photo view) the toolbar is hidden:-->
+<div id="mouse_overlay" style="position:absolute; width:auto; height:auto; z-index:3; bottom:0px; left:0px; right:105px; top:0px; background-image:url(images/overlay.png); " ></div>
+
+<!--CONTENT TO BE EDITIED (Thumbnails):-->
+<div id="grid_wrapper" style="position:absolute; width:160px; height:auto; z-index:4; top:50px; bottom:25px; left:512px; overflow-x:hidden; overflow-y:hidden; padding-top:-10px; " class="style1" ><div id="grid_container" style="position:absolute; width:160px; height:auto; z-index:4; top:0px; left:0px; padding-top:-10px; " class="style1" >
+    <ul id="grid" >
+      <!--Each LI element in the unordered list is a photo thumbnail. Only the IMG tag at the end of the line needs to be edited:-->
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Seven Things About Her, Oil, 20x16, Sold" src="photos/paintings/Picture_1.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="My Inspiration/Wayne Dyer's Butterfly, Acrylic, 30x40" src="photos/paintings/Picture_2.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Sunset in Baragan, Acrylic, 16x20, NFS" src="photos/paintings/Picture_3.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Woman from Sibiu, Acrylic, 16x20, Sold" src="photos/paintings/Picture_4.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Egypt, Oil, 22x28" src="photos/paintings/Picture_5.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Hot Texas Summer, Oil, 24x36" src="photos/paintings/Picture_6.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Speed, Oil, 20x16, Sold" src="photos/paintings/Picture_7.jpg" height="100%" /></div></li>
+
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Green Cell, Acrylic, 20x16, Sold" src="photos/paintings/Picture_8.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Sunflower, Oil, 30x36, Sold" src="photos/paintings/Picture_9.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="The Spirit of Rose, Oil, 20x16" src="photos/paintings/Picture_10.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Old World, Oil, 16x8, Sold" src="photos/paintings/Picture_11.jpg" height="100%" /></div></li>
+               
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="The Storm is Gone, Oil, 24x36, N/A" src="photos/paintings/Picture_12.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Yoga Meditation, Acrylic, 20x16, N/A" src="photos/paintings/Picture_13.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Winter at Home, Oil, 16x20, Sold" src="photos/paintings/Picture_14.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="American Sunset, Oil, 22x28" src="photos/paintings/Picture_15.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Fiesta de la Noche, Acrylic, 20x16, N/A" src="photos/paintings/Picture_16.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="A Memory, Acrylic, 36x24, N/A" src="photos/paintings/Picture_17.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Waterfall, Oil, 16x20, Sold" src="photos/paintings/Picture_18.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Phenomenon, 2D Mixed Media, 36x24 on Double Canvas" src="photos/paintings/Picture_19.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Carpatian Journey, Acrylic, 16x20, N/A " src="photos/paintings/Picture_20.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Isis of Egipt, Oil, 16x20, N/A" src="photos/paintings/Picture_21.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Corrida, Oil, 20x16, Sold" src="photos/paintings/Picture_22.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Life Pattern, Oil, 36x30" src="photos/paintings/Picture_23.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Butterfly Wing, Acrylic, 16x20, Sold" src="photos/paintings/Picture_24.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Matrix, Acrylic, 36x24" src="photos/paintings/Picture_25.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Hot Lava, Acrylic, 16x20, N/A" src="photos/paintings/Picture_26.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="The Bridge, Oil, 24x36, Sold" src="photos/paintings/Picture_27.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Creation, Oil, 20x16" src="photos/paintings/Picture_28.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Peace of Mind, Oil, 20x16, Framed" src="photos/paintings/Picture_29.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Ghost Ship, Acrylic, 20x16, Sold" src="photos/paintings/Picture_30.jpg" height="100%" /></div></li>
+                  
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Amazed, Mixed Media, 36x24" src="photos/paintings/Picture_33.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Study Man Nude, Charcoal, Framed, 15x12" src="photos/paintings/Picture_34.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Study Woman Nude, Charcoal, Framed, 15x12" src="photos/paintings/Picture_35.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Fantasy, Mixed Media, 36x24" src="photos/paintings/Picture_36.jpg" height="100%" /></div></li>
+            
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Story Time, Ink and Pastel on Paper" src="photos/paintings/Picture_38.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Lilies, Oil Pastel, 17 x11" src="photos/paintings/Picture_39.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Medieval Castle Transilvania, Acrylic, 16x20, Sold " src="photos/paintings/Picture_40.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="La, Acrylic, 16x8" src="photos/paintings/Picture_41.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Three Muses, Oil, 16x60" src="photos/paintings/Picture_42.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Au Revoir Mon Amour, Oil, 40x30" src="photos/paintings/Picture_43.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Body of Water, Oil, 36x48" src="photos/paintings/Picture_44.jpg" height="100%" /></div></li>
+      
+      <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Gold Mine, Oil and 18 K Gold, 12x12, Sold " src="photos/paintings/Picture_45.jpg" height="100%" /></div></li>
+      
+     <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Energy Burst, Oil, 30x40" src="photos/paintings/Picture_47.jpg" height="100%" /></div></li>
+      
+     <li><div style="position:absolute; width:130px; height:130px; text-align:center; overflow-x:hidden; overflow-y:hidden; cursor:pointer; " ><div style="position:absolute; left:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtl.png); " ></div><div style="position:absolute; right:-1px; top:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dtr.png); " ></div><div style="position:absolute; left:-1px; bottom:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbl.png); " ></div><div style="position:absolute; bottom:-1px; right:-1px; width:12px; height:12px; background-image:url(images/rcorner%2dbr.png); " ></div><img class="thumb" onclick="javascript:getID(this)" alt="Energy Burst, Oil, 30x40" src="photos/paintings/Picture_48.jpg" height="100%" /></div></li>
+
+
+      
+      </ul>
+</div>
+</div>
+
+<!--This is the wrapper for the popup window:-->
+<div id="nav_wrapper" style="position:absolute; width:auto; height:auto; z-index:8; bottom:0px; left:0px; right:0px; top:45px; background-image:url(images/overlay.png); " >
+	<div id="popup" class="style1" style="position:relative; width:680px; height:430px; z-index:1; margin-left:auto; margin-right:auto; background-image:url(images/popup.png); top:35px; " >
+    <div id="panel1_button" style="position:absolute; width:100px; height:18px; left:20px; top:26px; background-image: url('images/button_sel.jpg'); font-family: Arial, Helvetica, sans-serif; text-align: center; color: #FFFFFF; padding-top:1px; cursor:pointer; background-image:url(images/button_sel.jpg); " >Biography</div>
+    <div id="panel2_button" style="position:absolute; width:100px; height:18px; left:120px; top:26px; font-family: Arial, Helvetica, sans-serif; text-align: center; color: #444444; padding-top:1px; cursor:pointer; " >Events</div>
+    <div id="panel4_button" style="position:absolute; width:100px; height:18px; left:220px; top:26px; font-family: Arial, Helvetica, sans-serif; text-align: center; color: #444444; padding-top:1px; cursor:pointer; " >Contact</div>
+    <div id="closehud_button" style="position:absolute; width:15px; height:15px; z-index:4; left:16px; top:13px; cursor:pointer;" ></div>
+    <div id="slider_wrapper" style="position:absolute; width:617px; height:310px; top:93px; left:31px; overflow: hidden" >
+      <div id="slider_container" style="position:absolute; width:2468px; height:310px; top:0px; left:0px " >
+<!--Page 1 (Biography):-->
+    	<div id="panel1" style="position:absolute; width:617px; height:305px; top:0px; left:0px; overflow:auto " >
+			<div id="about_text" style="position:absolute; width:380px; height:270px; z-index:1; left:25px; top:20px; " >
+			<h3>Biography</h3>
+			<h5>Adina Cicort lives and works in Dallas, Texas, US. She was born in Bucharest, Romania, in a modest family of creative people, for whom art was an escape from the mundane. While she took drawing and watercolor painting classes, growing up in a tumultuous Post-Communist Romania she had to choose a different path, and later in 2001, she got her Bachelor Degree in Marketing from ASE Bucharest. In later years her love for art was unleashed, often finding herself drawing, writing poetry and essays, and spending a lot of time in her artists friends studios, learning what was about to become her lifelong passion for oil painting.
+<p>Always in search for expressing her true nature, Cicort left aside her career in advertising and PR, and began painting professionally since 2005, while living in Dallas, USA.</p> 
+<p>Adina emphasizes on spirituality and freedom of expression. For her, emotion and abstract thinking are two key elements in creating a unique visual impact. In constant pursuit of life's fundamental truths, the artist is often depicting dramatic and monumental compositions.</p
+<p>Her art is defined by bold, expressive colors layered in dynamic unconventional strokes and shapes. Although her favorite medium is oil, she has a particular attraction towards mixed media, using a variety of traditional and non traditional painting materials, techniques and tools in innovative ways. Her paintings are vivid, colorful, and energetic. Fabulous stories waiting to unfold, while others are poetry on canvas.</p>
+<p><b>Artist Statement</b></p>
+"My art is an expression of my momentum, of who I am at that particular point in space and time. And I have found myself being all of you at the same time, coming from the same, ONE Source. 
+My paintings are a bold statement of the values I believe in, a filter of my own reality. 
+I live to paint and paint to live, trying to do both without fear and only love..."
+</ul>
+<p><b>Exhibitions</b></p>
+<ul>
+  <li>Irving Arts Center, 10th Art Connection Show, Irving, TX, 2010</li>
+  <li>Screendoor One Arts Plaza, Dallas, TX, 2010</li>
+  <li>Visions Extraordinaire, African Visions Gallery @ Artfest International, Dallas, TX, 2010</li>
+  <li>McKinney Art Walk, McKinney, TX, 2010</li>
+  <li>Aloft Las Colinas, Irving, TX, 2009</li>
+  <li>Las Colinas Art Studio Show, Irving, TX, 2009</li>
+  <li>Romanian Cultural Nights Series, Colleyville, TX, 2009</li>
+  <li>Coppell Nations Festival, Coppell, TX, 2009</li>
+  <li>Romanian Festival, Colleyville, TX, 2009</li>
+  <li>Hollman Las Colinas BC Exhibit, Irving, TX, 2009</li>
+  <li>Las Colinas Art Studio Show, Irving, TX, US, 2008</li>
+  <li>Irving Arts Center, Irving, TX, 2007</li>
+  <li>Stephanie Ward Gallery, Plano, TX, 2007</li>
+  <li>Irving Arts Center, Irving TX, US, 2006</li>
+  <li>Irving Art Tour, Irving Arts Association, Irving, TX, 2006</li>
+  <li>Dallas Elbow Room, Dallas, TX, 2006</li>
+  <li>Sandella’s Café, Las Colinas, Irving, TX, 2005<br>
+
+<p><b>In the Media</b></p>
+  <li>360 Life By Design, Featured Article, 2010</li>
+  <li>Irving Community Television Network, Interview, 2009</li>  
+  <li>America Tonight with Kate Delaney, 2009</li>
+  <li>Dallas Morning News, 2009</li>
+  <li>Southlake Journal, 2009</li>
+  <li>Colleyville Texas Courier, 2009</li>
+  <li>Irving Journal, 2009</li>
+  <li>Las Colinas Online, 2009</li>
+  <li>Phoenix Mission, Phoenix, AZ, 2009</li>
+  <li>TVRI- International Romanian Television, Bucharest, Romania, 2009</li>
+  <li>Radio Romania International, Romani in Lume, Bucharest, Romania, 2009</li>
+  <li>Gandacul de Colorado, CO, 2009</li>
+  <li>Romanian Global News, Romania, 2009</li>
+  <li>Agero Stuttgart, Stuttgart, Germany, 2009</li>
+  <li>Asii Romani, Nurenberg, Germany, 2009</li>
+  <li>Romanian VIP Magazine, International, 2008</li>
+  <li>Romanian Global News, Romania, 2008</li>
+  <li>Radio Timisoara, Romani in Lume, Romania, 2008</li>
+  <li>Romanian Global News, Bucharest, Romania, 2008</li>
+  <li>Evenimentul Zilei, Romania, 2008</li>
+  <li>Ziua, New York City, NY, 2007</li>
+  <li>Radio 27 Chicago, IL, 2007</li>
+  <li>The Epoch Times, 2006</li>
+  <li>Romanian Global News, Romania, 2006</li>
+  <li>Gandacul de Colorado, CO, 2005</p>
+</p>
+<!-- Facebook Badge START -->
+<a href="http://www.facebook.com/adina.cicort" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Adina Cicort">Adina Cicort</a><span style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 16px; font-variant: normal; font-style: normal; font-weight: normal; color: #555555; text-decoration: none;">&nbsp;|&nbsp;</span><a href="http://www.facebook.com/badges/" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!">Create Your Badge</a><br/><a href="http://www.facebook.com/adina.cicort" target="_TOP" title="Adina Cicort"><img src="http://badge.facebook.com/badge/679193704.4678.1800124115.png" width="196" height="84" style="border: 0px;" /></a><!-- Facebook Badge END -->
+</ul></h5>
+	</div>
+		<div id="about_image" style="position:absolute; width:145px; height:236px; z-index:2; background-image:url(images/about_image.jpg); background-position:center; background-repeat:no-repeat; right:15px; top:20px; border:1px solid #555555; " >
+	</div>
+</div>
+<!--Page 2 (Events):-->
+<div id="panel2" style="position:absolute; width:617px; height:305px; top: 0px; left:617px; overflow:auto; text-align:left; " >
+     <div id="services_text" style="position:absolute; width:380px; height:270px; top: 15px; left:25px; overflow:auto; text-align:left; padding-right:10px " >
+            <br />10th Annual Art Connection Members' Exhibition 
+Main Gallery, Irving Arts Center 
+Jul 10, 2010 - Aug 01, 2010   
+Opening Show, Sunday July 11th, 2 to 4 pm
+       </h3>Get events invitations by email:
+<form method="POST" action="http://www.adinasart.com/subscribe.php">
+<p>Name: <input type="text" name="Name" size="40"></p>
+<p>Email: <input type="text" name="Email" size="40"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Send" name="Submit"></p>
+</form>
+<!-- Facebook Badge START --><a href="http://www.facebook.com/adina.cicort" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Adina Cicort">Adina Cicort</a><span style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 16px; font-variant: normal; font-style: normal; font-weight: normal; color: #555555; text-decoration: none;">&nbsp;|&nbsp;</span><a href="http://www.facebook.com/badges/" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!">Create Your Badge</a><br/><a href="http://www.facebook.com/adina.cicort" target="_TOP" title="Adina Cicort"><img src="http://badge.facebook.com/badge/679193704.4678.1800124115.png" width="196" height="84" style="border: 0px;" /></a><!-- Facebook Badge END -->
+</div>
+     </div>
+<!-- Page 3 of the slider (this is actually page4. page 3 services is not needed):-->
+		<div id="panel4" class="style17" style="position:absolute; width:617px; height:305px; top: 0px; left:1851px; overflow:auto " >
+			<div id="contact_form" style="position:absolute; width:379px; height:270px; z-index:1; left:25px; top:20px; " class="style22" >
+<form action="http://www.adinasart.com/cgi-sys/formmail.pl" method="post" name="hgmailer">
+<input type="hidden" name="recipient" value="adina@adinasart.com">
+<input type="hidden" name="subject" value="Email from Adinasart.com">
+<h3>STUDIO
+Adinasart is located in Las Colinas, Texas serving the Dallas/Fort Worth (DFW) and North Texas Area. 
+Available nationally and internationally for certain projects, please inquire below.
+972-922-4217
+adina@adinasart.com
+Call or write for more information on pricing and availability.
+<!-- Facebook Badge START --><a href="http://www.facebook.com/adina.cicort" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Adina Cicort">Adina Cicort</a><span style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 16px; font-variant: normal; font-style: normal; font-weight: normal; color: #555555; text-decoration: none;">&nbsp;|&nbsp;</span><a href="http://www.facebook.com/badges/" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;" title="Make your own badge!">Create Your Badge</a><br/><a href="http://www.facebook.com/adina.cicort" target="_TOP" title="Adina Cicort"><img src="http://badge.facebook.com/badge/679193704.4678.1800124115.png" width="196" height="84" style="border: 0px;" /></a><!-- Facebook Badge END --> </h3>
+Name:&nbsp;&nbsp;<input type="text" name="name" size="40" value=""><br><p>
+E-Mail:&nbsp;&nbsp;<input type="text" name="email" size="40" value=""><br><p>
+Message: <textarea name="comment" cols="50" rows="5"></textarea><br>
+<input type="button" value="Send" onclick="hgsubmit();">
+<input type="hidden" name="redirect" value="http://www.adinasart.com/new/">
+</form>
+	    	</div>
+			<div id="contact_image" style="position:absolute; width:145px; height:236px; z-index:2; background-image:url(images/contact_image.jpg); background-position:center; background-repeat:no-repeat; right:15px; top:20px; border:1px solid #555555; " >
+			</div>
+	    </div>
+      </div>
+	</div>
+  </div>
+</div>
+</body></html>
